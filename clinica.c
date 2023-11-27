@@ -15,8 +15,8 @@ struct Consulta agenda[300];
 int qtdAgendamento;
 
 bool verificarDisponibilidade(int diaAgenda, int horaAgenda){
-
-    if(horaAgenda < 8){
+ //sempre retorna true, exceto se for <8, então dá pra agendar às 30:00 horario de brasilia//
+    if(horaAgenda < 8){     //if(horaAgenda <8 || >19(horario de fechamento é as 20(...)))
         printf("Clinica Fechada neste horário\n");
         return false;
     } 
@@ -78,17 +78,18 @@ void main(){
         switch(opcao){
             case 1 :{
                 agendarConsulta();
-
+        // break //            
             }case 2 :{
                 listarConsulta();
-
+        // break //
             }case 3 :{
                 printf("saindo do programa\n");
-
+        // break //
             }
-            defaut :{
+            default :{
                 printf("Opção Inválida\n");
             }
         }
     }    while (opcao != 3);
+    //return? //
 }
